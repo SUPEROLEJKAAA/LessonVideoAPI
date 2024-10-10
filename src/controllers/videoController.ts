@@ -45,7 +45,7 @@ export const videoController = {
     const id: number = +req.params.id;
     const videoIndex: number = db.videos.findIndex((v) => v.id === id);
     if (videoIndex === -1) {
-      res.status(400).send();
+      res.status(404).send();
       return
     }
     db.videos.splice(videoIndex, 1);
