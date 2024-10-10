@@ -5,5 +5,5 @@ import { testingRouter } from "./routers/testingRouter";
 export const app = express();
 
 app.use(express.json());
-app.use("/video", videoRouter);
+app.use("/videos", videoRouter);
 app.use("/testing/", testingRouter)

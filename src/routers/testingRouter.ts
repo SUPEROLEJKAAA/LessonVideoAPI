@@ -3,4 +3,4 @@ import { testingController } from "../controllers/testingController";
 
 export const testingRouter = Router()
 
-testingRouter.get("/all-data", testingController.clear)
+testingRouter.delete("/all-data", testingController.clear)
