@@ -17,7 +17,7 @@ export const videoController = {
       canBeDownloaded: false,
       minAgeRestriction: null,
       createdAt: new Date().toISOString(),
-      publicationDate: new Date().toISOString(),
+      publicationDate: new Date(Date.now() + 3600000).toISOString(),
     };
     setDB(movie);
     res.status(201).json(movie);
