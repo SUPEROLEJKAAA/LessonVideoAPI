@@ -20,7 +20,7 @@ export const videoController = {
       publicationDate: new Date().toISOString(),
     };
     setDB(movie);
-    res.status(200).json(movie);
+    res.status(201).json(movie);
   },
   getOneVideo: (req: Request, res: Response<OutputVideoType>) => {
     const id: number = +req.params.id;
