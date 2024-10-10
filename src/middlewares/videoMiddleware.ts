@@ -18,11 +18,11 @@ function checkingConditions(
       message: "You've specified a field that is not expected",
     },
     title: {
-      condition: body.title.length > 40 || body.title.length < 1,
+      condition: body.title.length > 40 || body.title.length < 1 && typeof body.title === "string",
       message: "The length of the title should be between 1 and 40 characters.",
     },
     author: {
-      condition: body.author.length > 20 || body.author.length < 1,
+      condition: body.author.length > 20 || body.author.length < 1 && typeof body.author === "string",
       message: "The length of the author should be between 1 and 20 characters.",
     },
     availableResolutions: {
