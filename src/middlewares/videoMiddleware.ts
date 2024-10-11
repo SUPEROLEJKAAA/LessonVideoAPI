@@ -39,7 +39,7 @@ function checkingConditions(
     },
     minAgeRestriction: {
       condition:
-        (body.minAgeRestriction <= 1 && body.minAgeRestriction > 18) &&
+        (body.minAgeRestriction <= 1 || body.minAgeRestriction > 18) &&
         body.minAgeRestriction != null,
       message: "The value must be between 1 and 18 (inclusive) or null",
     },
