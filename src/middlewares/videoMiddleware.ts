@@ -18,11 +18,11 @@ function checkingConditions(
       message: "You've specified a field that is not expected",
     },
     title: {
-      condition: body.title.length > 40 || body.title.length < 1 && typeof body.title === "string",
+      condition: (body.title?.length > 40 || body.title?.length < 1) || body.title === null,
       message: "The length of the title should be between 1 and 40 characters.",
     },
     author: {
-      condition: body.author.length > 20 || body.author.length < 1 && typeof body.author === "string",
+      condition: (body.author?.length > 20 || body.author?.length < 1) || body.author === null,
       message: "The length of the author should be between 1 and 20 characters.",
     },
     availableResolutions: {
@@ -34,17 +34,17 @@ function checkingConditions(
       message: "Incorrect video resolutions available",
     },
     canBeDownloaded: {
-      condition: typeof body.canBeDownloaded === "boolean",
+      condition: typeof body.canBeDownloaded != 'boolean',
       message: "The type must be boolean",
     },
     minAgeRestriction: {
       condition:
-        (body.minAgeRestriction > 0 && body.minAgeRestriction <= 18) ||
-        body.minAgeRestriction === null,
+        (body.minAgeRestriction <= 1 && body.minAgeRestriction > 18) &&
+        body.minAgeRestriction != null,
       message: "The value must be between 1 and 18 (inclusive) or null",
     },
     publicationDate: {
-      condition: typeof body.publicationDate === "string",
+      condition: typeof body.publicationDate != 'string',
       message: "The parameter must be a string",
     },
   };
